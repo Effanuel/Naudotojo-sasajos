@@ -1,0 +1,381 @@
+:root {
+  --primaryColor: #330e62;
+  --secondaryColor: #4a148c;
+  --accentColor: #6e43a3;
+  --amberColor: #ffc107;
+}
+/* START GENERAL*/
+body {
+  margin: 0px;
+  font-family: 'Roboto';
+}
+
+h1 {
+  color: white;
+  margin: 0px;
+}
+
+div.logo-text {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 30px;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+div.logo-text > span {
+  color: var(--amberColor);
+}
+div.text > span {
+  color: var(--amberColor);
+}
+div.text {
+  color: white;
+  margin: 0px;
+  text-shadow: 2px 2px black;
+}
+
+.myButton {
+  margin-top: 10px;
+  border: 2px solid white;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 10px 40px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.myButton:hover {
+  background-color: white;
+  color: black;
+}
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+/* END GENERAL */
+
+/* START HEADER */
+header {
+  padding: 0px;
+  text-align: center;
+  background: var(--secondaryColor);
+  width: 100%;
+  height: 60px;
+  display: block;
+  background-color: green;
+  border-bottom: 2px solid var(--primaryColor);
+  border-top: 10px solid var(--primaryColor);
+}
+
+.inner-header {
+  width: 80%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  background-color: pink;
+}
+
+.inner-header .logo {
+  height: 100%;
+  display: table; /*vertically align center*/
+  float: left;
+  background-color: red;
+}
+.inner-header .logo h1 {
+  height: 100%;
+  display: table-cell; /*vertically align center*/
+  vertical-align: middle; /*vertically align center*/
+  font-size: 30px;
+}
+
+.inner-header .nav {
+  display: table;
+  float: right;
+  height: 100%;
+  margin: 0px;
+  padding-left: 0px;
+  background-color: purple;
+}
+
+.inner-header .nav a {
+  height: 100%;
+  display: table;
+  float: left;
+  padding: 0px 15px;
+  text-decoration: none;
+}
+.inner-header .nav a li {
+  display: table-cell; /*vertically align center*/
+  vertical-align: middle; /*vertically align center*/
+  height: 100%;
+  color: white;
+  font-size: 16px;
+  transition: 0.25s;
+}
+
+.nav a li:hover {
+  color: orange;
+}
+/* END HEADER */
+
+/* START ABOUT  */
+.about-section {
+  height: 400px;
+  display: block;
+  margin: 0 auto;
+  padding: 0px;
+  width: 100%;
+  background-image: url(assets/abstract-art.jpg);
+}
+
+.inner-about-section {
+  margin-top: 100px;
+  margin-left: 10%;
+  display: table-cell;
+  vertical-align: middle;
+  float: left;
+}
+
+.inner-about-section h1 {
+  font-size: 30px;
+  text-shadow: 2px 2px black;
+}
+
+/* END ABOUT  */
+
+/* START MORE */
+.more-section {
+  height: 175px;
+  display: block;
+  margin: 0 auto;
+  padding: 0px;
+  width: 100%;
+  background-color: var(--accentColor);
+  box-shadow: inset 0 0 10px #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-more-section {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+}
+
+.inner-more-section h1 {
+  text-shadow: 2px 2px black;
+}
+/* END MORE */
+
+/* START EXAMPLES*/
+.example-section {
+  display: block;
+  margin: 0 auto;
+  padding: 0px;
+  width: 100%;
+  background-image: url(assets/abstract-art.jpg);
+}
+
+.inner-example-section {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* END EXAMPLES*/
+
+/* START CARD */
+.card {
+  width: 100%;
+  margin: 20px;
+  background-color: white;
+  border-radius: 2px;
+  padding: 3px 3px 0px;
+  transition: 0.25s;
+}
+.card:hover {
+  background-color: var(--accentColor);
+}
+
+.card img {
+  cursor: pointer;
+}
+
+.text-section h1 {
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  width: 50%;
+  font-size: 30px;
+  text-shadow: 2px 2px black;
+}
+
+/* END CARD */
+
+.footer-distributed {
+  background-color: var(--secondaryColor);
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+  float: left;
+}
+
+.footer-distributed .footer-company-name {
+  color: #8f9296;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+  float: right;
+}
+
+.footer-distributed .footer-right p {
+  display: inline-block;
+  vertical-align: top;
+  margin: 15px 42px 0 0;
+  color: #ffffff;
+}
+
+/* The contact form */
+
+footer {
+  padding: 0px;
+  background: var(--secondaryColor);
+  width: 100%;
+  height: 300px;
+  clear: both;
+  display: block;
+  border-bottom: 10px solid var(--primaryColor);
+  border-top: 2px solid var(--primaryColor);
+}
+
+.inner-footer {
+  width: 80%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+
+  /* background-color: green; */
+}
+
+.inner-footer .nav {
+  height: 25%;
+  margin: 0px;
+  padding-left: 0px;
+}
+
+.inner-footer .nav a {
+  height: 100%;
+  display: table;
+  float: left;
+  padding: 0px 15px;
+  text-decoration: none;
+}
+.inner-footer .nav a li {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  color: white;
+  font-size: 16px;
+  transition: 0.25s;
+}
+
+.nav a li:hover {
+  color: orange;
+}
+
+.inner-footer form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.inner-footer form input,
+.inner-footer form textarea {
+  display: inline-block;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background-color: #1f2022;
+  border: 1px solid white;
+  resize: none;
+  font-size: 14px;
+  color: #d1d2d2;
+  padding: 18px;
+  margin: 10px;
+}
+.inner-footer form input:focus,
+.inner-footer form textarea:focus {
+  outline: none;
+  border: 1px solid var(--amberColor);
+}
+
+.inner-footer form input {
+  height: 55px;
+  margin-bottom: 15px;
+}
+
+/* .inner-footer form textarea {
+  margin-bottom: 20px;
+} */
+/* 
+.inner-footer form button {
+  border-radius: 2px;
+  background-color: #33383b;
+  color: #ffffff;
+  border: 0;
+  padding: 15px 50px;
+  font-weight: bold;
+} */
+
+/* START TABLE */
+#customers {
+  border-collapse: collapse; /*removes overlapping borders*/
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#customers tr {
+  background-color: #ddd;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--secondaryColor);
+  color: white;
+}
+
+#customers table {
+  padding: 200px;
+}
+/* END TABLE */
