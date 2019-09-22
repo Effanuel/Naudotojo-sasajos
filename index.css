@@ -1,0 +1,204 @@
+:root {
+  --primaryColor: #330e62;
+  --secondaryColor: #4a148c;
+  --accentColor: #6e43a3;
+  --amberColor: #ffc107;
+}
+/* START GENERAL*/
+html,
+body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  font-family: 'Roboto';
+}
+
+header {
+  padding: 0px;
+  text-align: center;
+  background: var(--secondaryColor);
+  width: 100%;
+  height: 60px;
+  display: block;
+  position: fixed;
+  top: 0;
+  border-bottom: 2px solid var(--primaryColor);
+  border-top: 10px solid var(--primaryColor);
+}
+
+.inner-header {
+  width: 80%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.inner-header .logo {
+  height: 100%;
+  display: table; /*vertically align center*/
+  float: left;
+}
+.inner-header .logo h1 {
+  height: 100%;
+  display: table-cell; /*vertically align center*/
+  vertical-align: middle; /*vertically align center*/
+  font-size: 30px;
+}
+
+.inner-header .nav {
+  display: table;
+  float: right;
+  height: 100%;
+  margin: 0px;
+  padding-left: 0px;
+}
+
+.inner-header .nav a {
+  height: 100%;
+  display: table;
+  float: left;
+  padding: 0px 10px; /* 12 is not good for resizing*/
+  text-decoration: none;
+}
+.inner-header .nav a li {
+  display: table-cell; /*vertically align center*/
+  vertical-align: middle; /*vertically align center*/
+  height: 100%;
+  color: white;
+  font-size: 16px;
+  transition: 0.1s;
+}
+
+.nav a li:hover {
+  color: orange;
+}
+
+h1 {
+  color: white;
+  margin: 0px;
+}
+
+div.logo-text {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 30px;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+div.logo-text > span {
+  color: var(--amberColor);
+}
+div.text > span {
+  color: var(--amberColor);
+}
+div.text {
+  color: white;
+  margin: 0px;
+  text-shadow: 2px 2px black;
+}
+
+footer {
+  padding: 10px;
+  background: var(--secondaryColor);
+  width: 100%;
+  clear: both;
+  height: 300px;
+  display: block;
+  border-bottom: 10px solid var(--primaryColor);
+  border-top: 2px solid var(--primaryColor);
+}
+
+@media screen and (max-width: 773px) {
+  .inner-footer h1 {
+    font-size: calc(3.2vw);
+  }
+}
+
+.inner-footer {
+  width: 80%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+
+  /* background-color: green; */
+}
+
+.inner-footer .nav {
+  height: 25%;
+  margin: 0px;
+  padding-left: 0px;
+}
+
+.inner-footer .nav a {
+  height: 100%;
+  display: table;
+  float: left;
+  padding: 0px 15px;
+  text-decoration: none;
+}
+.inner-footer .nav a li {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  color: white;
+  font-size: 16px;
+  transition: 0.25s;
+}
+
+.nav a li:hover {
+  color: orange;
+}
+
+.inner-footer form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.inner-footer form input,
+.inner-footer form textarea {
+  display: inline-block;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background-color: #1f2022;
+  border: 1px solid white;
+  resize: none;
+  font-size: 14px;
+  color: #d1d2d2;
+  padding: 18px;
+  margin: 10px;
+}
+.inner-footer form input:focus,
+.inner-footer form textarea:focus {
+  outline: none;
+  border: 1px solid var(--amberColor);
+}
+
+.inner-footer form input {
+  height: 55px;
+  margin-bottom: 15px;
+}
+
+.myButton {
+  margin-top: 10px;
+  border: 2px solid white;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 10px 40px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.myButton:hover {
+  background-color: white;
+  color: black;
+}
+.myButton:active {
+  position: relative;
+  top: 1px;
+}

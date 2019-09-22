@@ -1,0 +1,17 @@
+.instructions {
+  display: block;
+  margin: 0 auto;
+  padding: 0px;
+  width: 100%;
+  background-color: red;
+}
+
+.inner-instructions {
+  margin-top: 70px;
+  padding: 10px 10%;
+  width: 90%;
+  /* display: table-cell;
+    vertical-align: middle; */
+  float: left;
+  background-color: var(--accentColor);
+}
