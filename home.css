@@ -6,20 +6,22 @@
 
 /* START ABOUT  */
 .about-section {
-  height: 400px;
+  /* height: 400px;
   display: block;
   margin: 0 auto;
   padding: 0px;
   width: 100%;
+  background-image: url(assets/abstract-art.jpg); */
+  height: 40vh;
+  min-height: 40vh;
+  display: flex;
+  margin: 0 auto;
   background-image: url(assets/abstract-art.jpg);
+  align-items: center;
 }
 
 .inner-about-section {
-  margin-top: 100px;
   margin-left: 10%;
-  /* display: table-cell;
-  vertical-align: middle; */
-  float: left;
 }
 
 .inner-about-section h1 {
@@ -32,12 +34,17 @@
     font-size: calc(5vw);
   }
 }
+@media screen and (max-width: 500px) {
+  .inner-about-section h1 {
+    font-size: 25px;
+  }
+}
 
 /* END ABOUT  */
 
 /* START MORE */
 .more-section {
-  height: 175px;
+  height: 225px;
   display: block;
   margin: 0 auto;
   padding: 0px;
@@ -52,15 +59,22 @@
 .inner-more-section {
   text-align: center;
   margin: auto;
-  width: 50%;
+  width: 80%;
 }
 
 .inner-more-section h1 {
+  font-size: 32px;
   text-shadow: 2px 2px black;
 }
-@media screen and (max-width: 773px) {
+@media screen and (max-width: 800px) {
   .inner-more-section h1 {
-    font-size: calc(3.2vw);
+    font-size: calc(4vw);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .inner-more-section h1 {
+    font-size: 24px;
   }
 }
 
@@ -80,7 +94,6 @@
   width: 85%;
   height: 100%;
   display: block;
-  text-align: center;
   /* display: flex;
   justify-content: center;
   align-items: center; */
@@ -118,6 +131,13 @@
     width: 400px;
   }
 }
+
+@media screen and (max-width: 499px) {
+  .card {
+    width: 80vw;
+  }
+}
+
 .card img {
   width: 100%;
   cursor: pointer;
@@ -127,8 +147,9 @@
   text-align: center;
   margin: auto;
   padding: 20px;
-  width: 50%;
+  width: 80%;
   font-size: 30px;
+  text-align: center;
   text-shadow: 2px 2px black;
 }
 
@@ -161,27 +182,35 @@
 } */
 
 /* START TABLE */
-#customers {
+#tools {
   border-collapse: collapse; /*removes overlapping borders*/
   width: 100%;
   margin-bottom: 25px;
+  font-size: 20px;
 }
 
-#customers td,
-#customers th {
+#tools td,
+#tools th {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 5px;
 }
 
-#customers tr:nth-child(even) {
+#tools tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-#customers tr {
+#tools tr {
   background-color: #ddd;
 }
 
-#customers th {
+@media screen and (max-width: 400px) {
+  #tools tr,
+  th {
+    font-size: 5vw;
+  }
+}
+
+#tools th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
@@ -189,7 +218,7 @@
   color: white;
 }
 
-#customers table {
+#tools table {
   padding: 200px;
 }
 /* END TABLE */
