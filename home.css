@@ -72,12 +72,6 @@
   }
 }
 
-@media screen and (max-width: 800px) {
-  .inner-more-section h1 {
-    font-size: 24px;
-  }
-}
-
 /* END MORE */
 
 /* START EXAMPLES*/
@@ -94,6 +88,7 @@
   width: 85%;
   height: 100%;
   display: block;
+  text-align: center;
   /* display: flex;
   justify-content: center;
   align-items: center; */
@@ -197,6 +192,11 @@
 
 #tools tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+#tools tr:last-child {
+  color: var(--amberColor);
+  text-shadow: 1px 1px black;
 }
 
 #tools tr {
