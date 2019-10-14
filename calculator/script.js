@@ -16,7 +16,9 @@ const replaceValue = element => {
 
 $(function() {
   $('button[id^="input"]').click(function() {
-    appendValue(this);
+    if ($('#output').text().length < 20) {
+      appendValue(this);
+    }
   });
 
   $('button[id^="equal"]').click(function() {
