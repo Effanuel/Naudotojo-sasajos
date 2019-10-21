@@ -1,10 +1,10 @@
 const appendValue = element => {
   var value = $(element).val();
-  $('#output').append(value);
+  $("#output").append(value);
 };
 
 const popValue = () => {
-  $('#output').text((index, value) => {
+  $("#output").text((index, value) => {
     return value.substr(0, value.length - 1);
   });
 };
@@ -14,21 +14,53 @@ const replaceValue = element => {
   appendValue(element);
 };
 
+function equal() {
+  const current = $("#output").text();
+  const answer = eval(current);
+  $("#output").text(answer);
+}
+
+function root() {
+  const current = $("#output").text();
+  try {
+    // Is a positve number and is it a number (handles symbols)
+    if (current < 0 || !parseFloat(current)) throw "Error";
+    const answer = Math.sqrt(current);
+    $("#output").text(answer);
+  } catch (err) {
+    $("#output").text("");
+    $("#error")
+      .text(err)
+      .fadeOut(2000);
+  }
+}
+
+function findSymbolIndexMax(string) {
+  const symbolsArr = ["+", "-", "/", "*"];
+
+  symbolsArr.forEach(function(item, index, arr) {
+    arr[index] = string.indexOf(item);
+  });
+  return Math.max(...symbolsArr);
+}
+
 $(function() {
   $('button[id^="input"]').click(function() {
-    if ($('#output').text().length < 20) {
-      appendValue(this);
-    }
+    if ($("#output").text().length >= 20) return;
+    appendValue(this);
   });
+  $('button[id^="dot"]').click(function() {
+    if ($("#output").text().length >= 20) return;
+    const string = $("#output").text();
+    const i = string.indexOf(".");
 
-  $('button[id^="equal"]').click(function() {
-    const current = $('#output').text();
-    const answer = eval(current);
-    $('#output').text(answer);
+    const symbolIndexMax = findSymbolIndexMax(string);
+
+    if (symbolIndexMax >= i) appendValue(this);
   });
 
   $('button[id^="clear"]').click(function() {
-    $('#output').text('');
+    $("#output").text("");
   });
 
   $('button[id^="pop"]').click(function() {
@@ -38,8 +70,8 @@ $(function() {
     // if (this.id == 'pop') {
     //   popValue();
     // }
-    const array = ['+', '-', '/', '*'];
-    const lastElem = $('#output')
+    const array = ["+", "-", "/", "*"];
+    const lastElem = $("#output")
       .text()
       .slice(-1);
 
