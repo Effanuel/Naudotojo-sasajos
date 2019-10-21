@@ -11,6 +11,7 @@
   </head>
   <body>
     <div id="output"></div>
+    <div id="error"></div>
 
     <div class="container">
       <!-- <form id="calculate">
@@ -23,6 +24,12 @@
           <td><button value="Del" id="pop">Del</button></td>
           <td><button id="block"></button></td>
           <td><button value="/" id="symbol">/</button></td>
+        </tr>
+        <tr>
+          <td><button id="sqrt" onclick="root()">√</button></td>
+          <td><button value="8" id="input">pow2</button></td>
+          <td><button value="9" id="input">mod</button></td>
+          <td><button value="*" id="symbol">a</button></td>
         </tr>
         <tr>
           <td><button value="7" id="input" class="hl">7</button></td>
@@ -45,8 +52,8 @@
         <tr>
           <td><button id="block"></button></td>
           <td><button value="0" id="input" class="hl">0</button></td>
-          <td><button value="." id="input">.</button></td>
-          <td><button value="=" id="equal">=</button></td>
+          <td><button value="." id="dot">.</button></td>
+          <td><button value="=" id="equal" onclick="equal()">=</button></td>
         </tr>
       </table>
     </div>
