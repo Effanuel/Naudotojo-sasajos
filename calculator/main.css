@@ -9,9 +9,11 @@
   display: flex;
   margin: 0 auto;
   padding: 0px;
-  width: 225px;
+  width: 277px;
   justify-content: center;
+  flex-direction: column;
   background-color: grey;
+  vertical-align: top;
   border: 2px solid black;
 }
 
@@ -20,16 +22,15 @@
 }
 
 #output {
-  display: flex;
+  display: inline-flex;
   margin: 0 auto;
-  margin-top: 10px;
   padding-top: 15px;
   padding-right: 10px;
   justify-content: flex-end;
-  background-color: grey;
-  width: 225px;
   height: 50px;
-  border: 2px solid black;
+  width: 100%;
+  background-color: grey;
+  border-bottom: 1px solid black;
 }
 
 button {
@@ -38,7 +39,7 @@ button {
   margin: 1px;
   font-size: 20px;
 
-  background-color: #131313;
+  background-color: #242424;
   color: white;
   cursor: pointer;
   border: 1px solid black;
