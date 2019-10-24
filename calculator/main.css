@@ -9,16 +9,12 @@
   display: flex;
   margin: 0 auto;
   padding: 0px;
-  width: 277px;
+  width: 40vw;
   justify-content: center;
   flex-direction: column;
   background-color: grey;
   vertical-align: top;
   border: 2px solid black;
-}
-
-.input {
-  width: 100px;
 }
 
 #output {
@@ -28,15 +24,20 @@
   padding-right: 10px;
   justify-content: flex-end;
   height: 50px;
-  width: 100%;
-  background-color: grey;
+  width: calc(40vw - 4px);
+  font-size: calc(2.05vw);
+  background-color: green;
   border-bottom: 1px solid black;
 }
 
+@media screen and (max-width: 600px) {
+  #output {
+    font-size: 18px;
+  }
+}
 button {
-  height: 50px;
-  width: 50px;
-  margin: 1px;
+  height: 7vw;
+  width: 7vw;
   font-size: 20px;
 
   background-color: #242424;
@@ -52,4 +53,8 @@ button.hl {
 button:hover:not(#block) {
   background-color: grey;
   transition: 0.25s;
+}
+
+#block {
+  cursor: default;
 }

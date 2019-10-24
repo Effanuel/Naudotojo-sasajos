@@ -1,3 +1,7 @@
+const sleep = milliseconds => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds));
+};
+
 const appendValue = element => {
   var value = $(element).val();
   $('#output').append(value);
@@ -14,14 +18,35 @@ const replaceValue = element => {
   appendValue(element);
 };
 
-function equal() {
-  const current = $('#output').text();
-  const answer = eval(current);
-  $('#output').text(answer);
+async function equal() {
+  const toClean = $('#output').text();
+
+  // Clean the end of input using regex
+  const current = toClean.replace(/[\.\*+-/]+$/g, '');
+
+  try {
+    const answer = eval(current);
+    // If error message
+    if (!parseFloat(answer) || answer == 'Infinity') {
+      $('#output').text('Error');
+      await sleep(1000);
+      $('#output').text('');
+      return;
+    }
+    $('#output').text(answer);
+  } catch (err) {
+    $('#output').text(err);
+    await sleep(1000);
+    // Clear error
+    $('#output').text('');
+  }
 }
 
-function root(power) {
-  const current = $('#output').text();
+async function root(power) {
+  const toClean = $('#output').text();
+
+  // Clean the end of input using regex
+  const current = toClean.replace(/[\.\*+-/]+$/g, '');
   try {
     // Is a positve number and is it a number (handles symbols)
     if (eval(current) < 0 || !parseFloat(current)) throw 'Error';
@@ -30,6 +55,49 @@ function root(power) {
     $('#output').text(answer);
   } catch (err) {
     $('#output').text(err);
+    await sleep(1000);
+    // Clear error
+    $('#output').text('');
+  }
+}
+
+async function log() {
+  const toClean = $('#output').text();
+
+  // Clean the end of input using regex
+  const current = toClean.replace(/[\.\*+-/]+$/g, '');
+  try {
+    // Is a positve number and is it a number (handles symbols)
+    if (eval(current) < 0 || !parseFloat(current)) throw 'Error';
+    //Eval before taking root so sqrt(9*9) is valid for example
+    const answer = Math.log(eval(current));
+    $('#output').text(answer);
+  } catch (err) {
+    $('#output').text(err);
+    await sleep(1000);
+    // Clear error
+    $('#output').text('');
+  }
+}
+
+async function sine() {
+  const toClean = $('#output').text();
+
+  // Clean the end of input using regex
+  const current = toClean.replace(/[\.\*+-/]+$/g, '');
+  try {
+    // Is a positve number and is it a number (handles symbols)
+    if (eval(current) < 0 || !parseFloat(current)) throw 'Error';
+    //Eval before taking root so sqrt(9*9) is valid for example
+
+    const mod = eval(current) % 360;
+    const answer = Math.sin((mod * Math.PI) / 180);
+    $('#output').text(answer.toFixed(4));
+  } catch (err) {
+    $('#output').text(err);
+    await sleep(1000);
+    // Clear error
+    $('#output').text('');
   }
 }
 
@@ -41,16 +109,26 @@ function fact(num) {
   }
 }
 
-function factorial() {
-  const current = $('#output').text();
+async function factorial() {
+  const toClean = $('#output').text();
+  // Clean the end of input using regex
+  const current = toClean.replace(/[\.\*+-/]+$/g, '');
   try {
     // Is a positve number and is it a number (handles symbols)
     let val = fact(current);
+    if (!parseFloat(val)) {
+      $('#output').text('Error');
+      await sleep(1000);
+      $('#output').text('');
+      return;
+    }
     //Eval before taking root so sqrt(9*9) is valid for example
 
     $('#output').text(val);
   } catch (err) {
     $('#output').text(err);
+    await sleep(1000);
+    $('#output').text('');
   }
 }
 
@@ -64,7 +142,7 @@ function isLastElementSymbol(array = ['+', '-', '/', '*', '.']) {
 function PI() {
   if ($('#output').text().length >= 20) return;
 
-  if (isLastElementSymbol(['+', '-', '/', '*'])) {
+  if (isLastElementSymbol(['+', '-', '/', '*', ''])) {
     $('#output').append(3.14);
     return;
   } else if (
@@ -152,7 +230,7 @@ $(function() {
       return;
     } else if (
       (isLastElementSymbol() && lastElem == $(this).val()) ||
-      $('#output').text() == ''
+      ($('#output').text() == '' && ['*', '/'].includes($(this).val())) //beginning no symbol
     ) {
       return;
     }
