@@ -26,7 +26,7 @@
   height: 50px;
   width: calc(40vw - 4px);
   font-size: calc(2.05vw);
-  background-color: green;
+  background-color: grey;
   border-bottom: 1px solid black;
 }
 
