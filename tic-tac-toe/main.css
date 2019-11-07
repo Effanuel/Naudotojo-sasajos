@@ -1,0 +1,58 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: lightgrey;
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  padding: 0px;
+  width: 30vw;
+
+  justify-content: center;
+  flex-direction: column;
+  vertical-align: top;
+}
+
+#output {
+  display: inline-flex;
+  padding-top: 15px;
+  padding-right: 10px;
+  justify-content: flex-end;
+  height: auto;
+  width: calc(30vw);
+  font-size: calc(5vw);
+}
+
+@media screen and (max-width: 600px) {
+  #output {
+    font-size: 18px;
+  }
+}
+button {
+  height: 10vw;
+  width: 10vw;
+  font-size: 20px;
+  padding: 0px;
+
+  background-color: green;
+  color: black;
+  font-weight: 50;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+button.hl {
+  background-color: #060606;
+}
+
+button:hover:not(#block) {
+  background-color: lightgreen;
+  transition: 0.25s;
+}
+
+#block {
+  cursor: default;
+}
