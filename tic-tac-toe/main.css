@@ -2,6 +2,9 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+}
+
+body {
   background-color: lightgrey;
 }
 
@@ -24,12 +27,7 @@
   height: auto;
   width: calc(30vw);
   font-size: calc(5vw);
-}
-
-@media screen and (max-width: 600px) {
-  #output {
-    font-size: 18px;
-  }
+  text-align: center;
 }
 button {
   height: 10vw;
@@ -45,15 +43,81 @@ button {
   border: 1px solid black;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  text-align: center;
+}
+
+.modal-content p {
+  font-size: 50px;
+}
+
+@media screen and (max-width: 1200px) {
+  #output {
+    font-size: 60px;
+    width: 360px;
+  }
+  .container {
+    width: 360px;
+  }
+  button {
+    height: 120px;
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .modal-content p {
+    font-size: 6.25vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #output {
+    font-size: 15vw;
+    width: 90vw;
+  }
+  .container {
+    width: 90vw;
+  }
+  button {
+    height: 30vw;
+    width: 30vw;
+  }
+}
+
 button.hl {
   background-color: #060606;
 }
 
-button:hover:not(#block) {
+button:hover {
   background-color: lightgreen;
   transition: 0.25s;
 }
 
-#block {
-  cursor: default;
+#play {
+  height: 30px;
+  width: 100px;
+  background-color: black;
+  color: white;
+}
+#play:hover {
+  background-color: white;
+  color: black;
+  transition: 0.25s;
 }
