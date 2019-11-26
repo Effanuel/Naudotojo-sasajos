@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="main.css" />
+    <title>Dynamic Table</title>
+  </head>
+  <body>
+    <!-- <div class="main-container">
+      <div class="parameter-container">
+        <label>Name: </label>
+        <input />
+      </div>
+      <div class="parameter-container">
+        <label>Rows: </label>
+        <input />
+      </div>
+      <div class="parameter-container">
+        <label>Columns: </label>
+        <input />
+      </div>
+    </div> -->
+    <div class="main-container">
+      <form>
+        <label for="tname">Table name</label>
+        <input
+          type="text"
+          id="tname"
+          name="tablename"
+          placeholder="Table name"
+        />
+        <div class="size">
+          <label for="rows">Rows</label>
+          <input
+            type="text"
+            id="rows"
+            name="rows"
+            placeholder="Number of rows"
+          />
+          <label for="fcols">Columns</label>
+          <input
+            type="text"
+            id="fcols"
+            name="cols"
+            placeholder="Number of columns"
+          />
+        </div>
+
+        <input type="submit" value="Generate" onclick="Gen()" />
+      </form>
+    </div>
+    <div id="dvTable"></div>
+  </body>
+</html>
