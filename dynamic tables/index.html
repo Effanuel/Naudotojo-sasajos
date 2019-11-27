@@ -25,33 +25,27 @@
       </div>
     </div> -->
     <div class="main-container">
-      <form>
-        <label for="tname">Table name</label>
+      <label for="tname">Table name</label>
+      <input type="text" id="tname" name="tablename" placeholder="Table name" />
+      <div class="size">
+        <label for="rows">Rows</label>
         <input
           type="text"
-          id="tname"
-          name="tablename"
-          placeholder="Table name"
+          id="frows"
+          name="rows"
+          placeholder="Number of rows"
         />
-        <div class="size">
-          <label for="rows">Rows</label>
-          <input
-            type="text"
-            id="rows"
-            name="rows"
-            placeholder="Number of rows"
-          />
-          <label for="fcols">Columns</label>
-          <input
-            type="text"
-            id="fcols"
-            name="cols"
-            placeholder="Number of columns"
-          />
-        </div>
+        <label for="fcols">Columns</label>
+        <input
+          type="text"
+          id="fcols"
+          name="cols"
+          placeholder="Number of columns"
+        />
+      </div>
 
-        <input type="submit" value="Generate" onclick="Gen()" />
-      </form>
+      <input type="submit" value="Generate" onclick="generateTable()" />
+      <input type="submit" value="Create table" />
     </div>
     <div id="dvTable"></div>
   </body>
