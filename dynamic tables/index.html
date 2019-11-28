@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="main.css" />
     <title>Dynamic Table</title>
@@ -25,28 +24,55 @@
       </div>
     </div> -->
     <div class="main-container">
-      <label for="tname">Table name</label>
-      <input type="text" id="tname" name="tablename" placeholder="Table name" />
-      <div class="size">
-        <label for="rows">Rows</label>
+      <form
+        action="pages/tablePage/index.html"
+        id="form"
+        method="GET"
+        onsubmit="generateTable()"
+      >
+        <label for="tname">Table name</label>
         <input
           type="text"
-          id="frows"
-          name="rows"
-          placeholder="Number of rows"
+          id="tname"
+          name="tablename"
+          placeholder="Table name"
         />
-        <label for="fcols">Columns</label>
-        <input
-          type="text"
-          id="fcols"
-          name="cols"
-          placeholder="Number of columns"
-        />
-      </div>
+        <div class="size">
+          <label for="rows">Rows</label>
+          <input
+            type="text"
+            id="frows"
+            name="rows"
+            placeholder="Number of rows"
+          />
+          <label for="fcols">Columns</label>
+          <input
+            type="text"
+            id="fcols"
+            name="cols"
+            placeholder="Number of columns"
+          />
+        </div>
+        <label for="fselect">Background color</label>
+        <select name="select" id="select">
+          <option selected>white</option>
+          <option>green</option>
+          <option>blue</option>
+          <option>grey</option>
+        </select>
 
-      <input type="submit" value="Generate" onclick="generateTable()" />
-      <input type="submit" value="Create table" />
+        <!-- <button id="generate" type="button" onclick="generateTable()">
+          Generate
+        </button> -->
+        <input
+          href="pages/tablePage/index.html"
+          form="form"
+          type="submit"
+          value="Generate table"
+        />
+      </form>
     </div>
+
     <div id="dvTable"></div>
   </body>
 </html>

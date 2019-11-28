@@ -5,6 +5,7 @@
 }
 
 body {
+  min-width: 500px;
   /* background-color: lightgrey; */
 }
 
@@ -16,6 +17,7 @@ body {
   width: 30%;
   justify-content: flex-start;
   flex-direction: column;
+  min-width: 300px;
 }
 
 #dvTable {
@@ -23,7 +25,8 @@ body {
   margin: 0 auto;
   margin-top: 20px;
   padding: 0px;
-  width: 80%;
+  width: 100%;
+  min-width: 500px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -48,6 +51,12 @@ div.tableName {
   text-shadow: 1px 1px lightgray; /* SECRET SAUCE */
 }
 
+select {
+  width: 100%;
+  height: 30px;
+  margin: 10px 0px;
+}
+
 input[type="text"] {
   width: 100%;
   height: 30px;
@@ -57,7 +66,8 @@ input[type="text"] {
   border: 1px solid black;
 }
 
-input[type="submit"] {
+input[type="submit"],
+#generate {
   width: 100%;
   background-color: white;
   color: black;
@@ -65,9 +75,11 @@ input[type="submit"] {
   margin-bottom: 5px;
   border: 1px solid black;
   cursor: pointer;
+  text-align: center;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+#generate:hover {
   background-color: black;
   color: white;
   transition: 0.25s;
@@ -82,11 +94,23 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 900px) {
+  .main-container {
+    width: 300px;
+  }
+
   .size {
     text-align: start;
   }
   .size > input[type="text"] {
     width: 100%;
+  }
+  input.cell {
+    width: 108px;
+    height: 36px;
+    font-size: 22.5px;
+  }
+  div.tableName {
+    font-size: 30px;
   }
 }
 
@@ -100,7 +124,7 @@ input[type="submit"]:hover {
   font-size: calc(5vw);
   text-align: center;
 }
-button {
+/* button {
   height: 10vw;
   width: 10vw;
   font-size: 20px;
@@ -111,7 +135,7 @@ button {
   font-weight: 50;
   cursor: pointer;
   border: 1px solid black;
-}
+} */
 
 table {
   border-collapse: collapse;
