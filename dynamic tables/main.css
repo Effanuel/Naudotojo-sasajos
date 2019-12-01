@@ -5,7 +5,7 @@
 }
 
 body {
-  min-width: 500px;
+  min-width: 325px;
   /* background-color: lightgrey; */
 }
 
@@ -57,10 +57,11 @@ select {
   margin: 10px 0px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="number"] {
   width: 100%;
   height: 30px;
-  padding: 0px 10px;
+  padding: 0px 2px;
   margin: 10px 0px;
   display: inline-block;
   border: 1px solid black;
@@ -85,15 +86,28 @@ input[type="submit"]:hover,
   transition: 0.25s;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .size {
   text-align: center;
 }
 
-.size > input[type="text"] {
-  width: calc(8vw + 10px);
+.size > input[type="text"],
+.size > input[type="number"] {
+  width: calc(4vw + 8px);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1125px) {
   .main-container {
     width: 300px;
   }
@@ -101,7 +115,8 @@ input[type="submit"]:hover,
   .size {
     text-align: start;
   }
-  .size > input[type="text"] {
+  .size > input[type="text"],
+  .size > input[type="number"] {
     width: 100%;
   }
   input.cell {

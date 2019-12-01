@@ -40,28 +40,41 @@
         <div class="size">
           <label for="rows">Rows</label>
           <input
-            type="text"
+            type="number"
             id="frows"
             name="rows"
             placeholder="Number of rows"
           />
           <label for="fcols">Columns</label>
           <input
-            type="text"
+            type="number"
             id="fcols"
             name="cols"
             placeholder="Number of columns"
           />
+          <label for="rows">Table size</label>
+          <input
+            type="number"
+            id="fsize"
+            name="table_size"
+            placeholder="Table size %"
+          />
         </div>
+        <label for="fselect">Enable numerating</label>
+        <select name="select" id="selectNumerating">
+          <option selected>Yes</option>
+          <option>No</option>
+        </select>
+
         <label for="fselect">Background color</label>
         <select name="select" id="select">
           <option selected>white</option>
-          <option>green</option>
-          <option>blue</option>
-          <option>grey</option>
+          <option>lightgreen</option>
+          <option>lightblue</option>
+          <option>lightgrey</option>
         </select>
 
-        <label for="fselect">Font</label>
+        <label for="fselect">Font family</label>
         <select name="select" id="selectFont">
           <option selected>Times New Roman</option>
           <option>Arial</option>
