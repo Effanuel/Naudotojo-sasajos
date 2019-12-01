@@ -1,17 +1,17 @@
 class Table {
-  constructor(name = "Table name", rows, cols, bc_color, size) {
+  constructor(name = "Table name", rows, cols, bc_color, font) {
     this.name = name;
     this.rows = parseInt(rows);
     this.cols = parseInt(cols);
     this.bc_color = bc_color;
-    this.size = size;
+    this.fontFamily = font;
   }
 
-  setParameters(name, rows, cols, size = 10) {
+  setParameters(name, rows, cols, font) {
     this.name = name;
     this.rows = parseInt(rows);
     this.cols = parseInt(cols);
-    this.size = size;
+    this.fontFamily = font;
   }
 
   drawTable() {
@@ -53,6 +53,7 @@ class Table {
         }
         //======================
         col.style.backgroundColor = this.bc_color;
+        col.style.fontFamily = this.fontFamily;
         row.appendChild(col);
       }
       table.appendChild(row);
@@ -66,7 +67,7 @@ let table;
 window.onload = function() {
   console.log(sessionStorage);
   //Render table on page load
-  const { table_name, rows, cols, bc_color } = sessionStorage;
-  table = new Table(table_name, rows, cols, bc_color);
+  const { table_name, rows, cols, bc_color, font } = sessionStorage;
+  table = new Table(table_name, rows, cols, bc_color, font);
   table.drawTable();
 };
